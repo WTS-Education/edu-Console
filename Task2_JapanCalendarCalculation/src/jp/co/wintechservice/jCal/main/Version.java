@@ -10,6 +10,7 @@ import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
  *
  */
 public abstract class Version {
+    
     public void version() throws ParseException {
         /**
          * Inputクラスをインスタンス化
