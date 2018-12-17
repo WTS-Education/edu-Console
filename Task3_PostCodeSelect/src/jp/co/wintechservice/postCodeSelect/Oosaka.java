@@ -1,16 +1,18 @@
 package jp.co.wintechservice.postCodeSelect;
 
 
+import java.io.Serializable;
+
 import jp.sf.orangesignal.csv.annotation.CsvColumn;
 import jp.sf.orangesignal.csv.annotation.CsvEntity;
 
 /**
  * javaBeanクラス
- * @author kohari.junichirou
+ * @author KohariJunichiro
  *
  */
 @CsvEntity (header = false)
-public class Oosaka {
+public class Oosaka implements Serializable {
 
     /**
      * 全国地方公共団体コード
@@ -68,6 +70,31 @@ public class Oosaka {
     private String complexPostcode;
     @CsvColumn(position = 13)
     private String update;
+    @CsvColumn(position = 14)
+    private String change;
+
+    public Oosaka() {}
+
+    public Oosaka(String code, String oldPost, String postcode, String prefectureHurigana,
+                   String cityHurigana, String townHurigana, String prefecture, String city,
+                   String town, String postcodePattern, String koaza, String tyoume,
+                   String complexPostcode, String update) {
+        this.code = code;
+        this.oldPost = oldPost;
+        this.postcode = postcode;
+        this.prefectureHurigana = prefectureHurigana;
+        this.cityHurigana = cityHurigana;
+        this.townHurigana = townHurigana;
+        this.prefecture = prefecture;
+        this.city = city;
+        this.town = town;
+        this.postcodePattern = postcodePattern;
+        this.koaza = koaza;
+        this.tyoume = tyoume;
+        this.complexPostcode = complexPostcode;
+        this.update = update;
+    }
+
 
 
     public String getCode() {
@@ -168,6 +195,13 @@ public class Oosaka {
     }
     public void setUpdate(String n) {
         this.update = n;
+    }
+
+    public String getChange() {
+        return change;
+    }
+    public void setChange(String change) {
+        this.change = change;
     }
 
 
