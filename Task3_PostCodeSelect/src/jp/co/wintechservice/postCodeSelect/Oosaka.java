@@ -3,52 +3,39 @@ package jp.co.wintechservice.postCodeSelect;
 
 import java.io.Serializable;
 
-import jp.sf.orangesignal.csv.annotation.CsvColumn;
-import jp.sf.orangesignal.csv.annotation.CsvEntity;
-
 /**
  * javaBeanクラス
  * @author KohariJunichiro
  *
  */
-@CsvEntity (header = false)
 public class Oosaka implements Serializable {
 
     /**
      * 全国地方公共団体コード
      */
-    @CsvColumn(position = 0)
     private String code;
     /**
      * 旧郵便番号
      */
-    @CsvColumn(position = 1)
     private String oldPost;
 
     /**
      * 郵便番号（対象）
      */
-    @CsvColumn(position = 2)
     private String postcode;
 
     /**
      * 住所フリガナ
      */
-    @CsvColumn(position = 3)
     String prefectureHurigana;
-    @CsvColumn(position = 4)
     String cityHurigana;
-    @CsvColumn(position = 5)
     String townHurigana;
 
     /**
      * 住所漢字（対象）
      */
-    @CsvColumn(position = 6)
     private String prefecture;
-    @CsvColumn(position = 7)
     private String city;
-    @CsvColumn(position = 8)
     private String town;
 
     /**
@@ -60,17 +47,11 @@ public class Oosaka implements Serializable {
      * 14.変更理由（「0」は変更なし、「1」市政・区政・町政・分区・政令指定都市施行、
      *    「2」住居表示の実施、「3」区画整理、「4」郵便区調整等、「5」訂正、「6」廃止（廃止データのみ使用））
      */
-    @CsvColumn(position = 9)
     private String postcodePattern;
-    @CsvColumn(position = 10)
     private String koaza;
-    @CsvColumn(position = 11)
     private String tyoume;
-    @CsvColumn(position = 12)
     private String complexPostcode;
-    @CsvColumn(position = 13)
     private String update;
-    @CsvColumn(position = 14)
     private String change;
 
     public Oosaka() {}
@@ -94,9 +75,13 @@ public class Oosaka implements Serializable {
         this.complexPostcode = complexPostcode;
         this.update = update;
     }
+    
+    
 
-
-
+    /**
+     * getter,setter
+     * @return
+     */
     public String getCode() {
         return code;
     }
